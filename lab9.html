@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="form.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <title> Groceteria </title>
+    <link rel="icon" href="logo.png" type="image/x-icon">
+
+	<title>e-commerece platform</title>
+	<style>
+		
+        #t1{
+            font-size:300%;
+            flex: 1 1 50rem;
+            box-shadow: 0 0.2rem 1.5rem rgba(0,0,0,0,.1) ;
+            border-radius: 0.5rem;
+            border:0.1rem solid rgba(0,0,0,0.1);
+            position:static;
+            background-image: url(cart.jpg);
+
+        }
+         .box-container {
+            flex: 1 1 50rem;
+            box-shadow: 0 0.2rem 1.5rem rgba(0,0,0,0,.1) ;
+            border-radius: 0.5rem;
+            border:0.1rem solid rgba(0,0,0,0.1);
+            position:relative;
+        
+        }
+        .black-color{
+            color: rgb(49, 129, 80);
+        }
+       .c{
+        font-size: 230%;
+       }
+       .c .img{
+        flex: 1 1 50rem;
+        box-shadow: 0 0.2rem 1.5rem rgba(0,0,0,0,.1) ;
+        border-radius: 0.5rem;
+        border:0.1rem solid rgb(63, 191, 238);
+        position:relative;
+       }
+       hr.solid {
+        border-top: 3px solid #1f1919;
+      }
+      
+            .footer{
+                color: #8a8a8a;
+                font-size: 14px;
+                padding: 60px 0 20px;
+            }
+            .footer p{
+                color: #8a8a8a;
+            }
+            .footer h3{
+                color: #fff;
+                margin-bottom: 20px;
+            }
+            .footer-col-1, .footer-col-2, .footer-col-3, .footer-col-4{
+                min-width: 250px;
+                margin-bottom: 20px;
+            }
+            .footer-col-1{
+                flex-basis: 30%;
+            }
+            .footer-col-2{
+                flex: 1;
+                text-align: center;
+            }
+            .footer-col-2 img{
+                width: 180px;
+                margin-bottom: 20px;
+            }
+            .footer-col-3, .footer-col-4{
+                text-align: center;
+            }
+            .footer-col-5{
+                background-color:pink;
+            }
+        </style>
+        <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js">
+        </script>
+        
+
+ 	<script>
+		var app = angular.module('Scart',[]);
+		app.controller('Ctrl',function($scope){
+		 $scope.total = function() {
+	        var t = 0;
+	        angular.forEach($scope.data, function(m) {
+	          t+=m.qty;
+	        });
+			return t;
+		}
+		$scope.ta = function() {
+	        var a = 0;
+	        angular.forEach($scope.data, function(m) {
+	          a += (m.qty*m.price);
+	        });
+			return a;
+		}
+		});
+        function validemail(){
+            var e=document.getElementById("email").value.trim();
+            if(e==""){
+                alert("enter valid email.");
+                return false;
+            }
+        }
+        
+	</script>
+</head>
+
+<body>
+    <header>
+
+        <input type="checkbox" name="" id="toggler">
+        <a href="#" class="logo">Groceteria </a>
+        <nav class="navbar">
+            <a href="#home">Home</a>
+            <a href="#About">About</a>
+            <a href="#products">Products</a>
+            <a href="review.html">Review</a>
+            <a href="contact.html">Contact us</a>
+        </nav>
+        <div class="icons">
+            <a href="#" class="fas fa-heart"></a>
+            <a href="#" class="fas fa-user"  ></a>
+            <a href="#" class="fas fa-shopping-cart"></a>           
+        </div>
+    </header>
+
+    <section class="home" id="home" style="background-color: black; background-size:2200px; ">
+        <div class="content">
+            
+            <h3>Groceteria</h3>
+            <span> Grocery Store </span>
+           
+            <p>Our site helps you bring freash Groccery to your home.
+            </p>
+
+            <a href="#products" class="btn">Shop now</a>
+        </div>
+    </section>
+
+    <section class="About" id="About" style="background:rgb(15, 14, 14)">
+        <h1 class="heading"><span>About</span>-us</h1>
+        <div class="row">
+            <div class="content">
+                <h3> Why we are at top? </h3>
+                <p>We are providing the best quality of Groccery, we are assured you the best quality
+                     as well the best services we can provide you.
+
+                </p>
+                <p>If you choose us then you will never get disappointed from us. We are delivered your groccery in the maximum
+                    of 1-working day. If there is any defect we assure you replacement in next 5-hours.</p>
+                <a href="#" class="btn">learn more</a>
+            </div>
+        </div>
+    </section>
+
+
+<section class="icon-conta">
+    <div class="icons">
+        <i class="fas fa-shipping-fast"></i>
+        <div class="info">
+            <h3>Free delivery</h3>
+            <span>On all orders</span>
+        </div>
+
+    </div>
+    <div class="icons">
+        <i class="fa fa-undo"></i>
+        <div class="info">         
+            <h3>1 days returns</h3>
+            <span>Moneyback Garantee</span>
+        </div>
+
+    </div>
+    <div class="icons">
+        <i class="fa fa-gift"></i>
+        <div class="info">
+            <h3>Offer and gifts</h3>
+            <span>On all orders</span>
+        </div>
+
+    </div>
+    <div class="icons">
+        <i class="fa fa-paypal"></i>
+        <div class="info">
+            <h3>Secure payments</h3>
+            <span>Protected by paypal</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+    <section class="products" style="background:white; color:rgb(179, 43, 66);" id="products">
+
+        <center>
+             <h1 class="heading"><span> products</span></h1>
+             <br> 
+
+<body background="black">
+    <br> 
+	 <div class="box-container" ng-app="Scart" ng-controller="Ctrl" ng-init= "data=[
+	{name:'P1',price:250,qty:0,pic:'Paneer.png'},
+    {name:'P2',price:50,qty:0,pic:'egg.png'},
+    {name:'P3',price:100,qty:0,pic:'bread.png'},
+    {name:'P4',price:200,qty:0,pic:'butter.png'},
+    {name:'P5',price:70,qty:0,pic:'milk.png'},
+    {name:'P6',price:500,qty:0,pic:'sugar.png'},
+    {name:'P7',price:40,qty:0,pic:'yogurt.png'},
+    {name:'P8',price:1000,qty:0,pic:'wheat.png'},
+    {name:'P9',price:1000,qty:0,pic:'rice.png'},
+	]">
+	<table class="c" >
+        <tr ng-repeat="m in data">
+		<td width=30%>
+		<img src={{m.pic}} width=70% height=70% gap=40px><br><td>
+		product-name  : {{m.name}}<br>
+		product-price : {{m.price| currency:'&#8377;'}}<br>
+      
+		<button    style="height :30px;width :30px;background-color:rgb(54, 159, 77) ;" ng-click="m.qty = m.qty-1" ng-disabled="m.qty <= 0">-</button>
+		<label>Quantity : {{m.qty}}</label>
+        
+		<button  style="height :30px;width :30px;background-color:rgb(54, 159, 77) ;" ng-click="m.qty = m.qty+1" >+</button><br>
+		<span>Price according to quantity is: {{m.price*m.qty | currency:'&#8377;' }}</span>
+        <br><br>
+		<br> 
+        <hr class="solid">
+		</td>
+
+		</tr>
+		<div id="t1" >
+			<lable align="center"> <a href="#" class="fas fa-shopping-cart black-color"></a>  Cart</label><br>
+			
+Total Qty : {{total()}}
+<br>
+Total Amount: {{ta()|currency:'&#8377;'}}
+<br>
+<a href="cart.html" class="btn">Check Out</a>
+		</div>
+	</table>
+	
+	</div>
+        
+  <div class="footer" >
+    <div class="container">
+        <div class="row">
+            <div class="footer-col-1">
+                <p>Contact: +123 454-889-543</p>
+                <p>Email: 21bce054@nirmauni.ac.in</p><br>
+                <h3>Download Our App</h3>
+                <!-- change -->
+                <div class="app-logo">
+                    <a href="http://play.google.com" target="_blank"><img src="play-store.png" alt="Google Play Store"></a>
+                    <br><br>
+                    <a href="http://www.apple.com" target="_blank"><img src="app-store.png" alt="Apple App Store"></a>
+                </div>
+            </div>
+            <div class="footer-col-2">
+                <a href="lab9.html" target="_blank"><img src="logo.png" alt="home page"></a>
+            </div>
+            <div class="footer-col-3">
+                <h3>Useful Links</h3>
+                <ul>
+                    <a href="#">Blog-post</a>
+                    <br>
+                    <a href="#">Return policy</a>
+                    <br>
+                    <a href="#">Join Affiliate</a>
+                    <br>
+                </ul>
+            </div>
+            <div class="footer-col-4" >
+                <h3>Follow Us</h3>
+                <ul>
+                    <a href="https://www.instagram.com/"> <i class="fab fa-instagram"></i></a>
+                    
+                    &nbsp;
+                    <a href="https://twitter.com/"> <i class="fab fa-twitter"></i></a>
+                    &nbsp;
+                    <a href="https://www.linkedin.com/"> <i class="fab fa-linkedin"></i></a>
+                    &nbsp;
+                    <a href="#"> <i class="fa fa-envelope"></i></a>
+                    &nbsp;
+                    <a href="#"> <i class="fa fa-phone"></i></a>
+                    &nbsp;
+                    <a href="https://www.google.com/maps/2F11gjv0c0wy"> <i class="fa fa-map-marker" aria-hidden="true"></i></a>
+                    &nbsp;
+                    <br><br>
+                </ul>
+        </div>   
+                <p class="copyright">Copyright 2023 - 21bce054, Krina Dharsandiya</p>
+        
+</body>
+</html>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<html>
+<head>
+<title>registration form</title>
+<script>
+function registerUser() {
+  var username = document.getElementById("username").value;
+  var email = document.getElementById("email").value;
+  var password = document.getElementById("password").value;
+  var confirm_password = document.getElementById("confirm_password").value;
+  
+  if (password != confirm_password) {
+    alert("Passwords do not match");
+    return false;
+  }
+  
+  // Store user data in local storage
+  var user = {
+    "username": username,
+    "email": email,
+    "password": password
+  };
+  localStorage.setItem(username, JSON.stringify(user));
+  
+  alert("Registration successful!");
+  return true;
+}
+</script>
+
+<style>
+form {
+  width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Style for form labels */
+label {
+  display: inline-block;
+  width: 100px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Style for form inputs */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Style for form submit button */
+input[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+
+/* Style for form error messages */
+.error {
+  color: red;
+  margin-bottom: 10px;
+}
+</style>
+
+</head>
+
+<form onsubmit="return registerUser()" action="file:///D:/B.Tech%20Nirma/Semester%20-%204/WT/prac9/lab9.html" >
+  <label for="username">Username:</label>
+  <input type="text" id="username" name="username" required>
+  <br>
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" required>
+  <br>
+  <label for="password">Password:</label>
+  <input type="password" id="password" name="password" required>
+  <br>
+  <label for="confirm_password">Confirm Password:</label>
+  <input type="password" id="confirm_password" name="confirm_password" required>
+  <br>
+  <input type="submit" value="Register">
+</form>
+
+
+</html>
